@@ -1,0 +1,21 @@
+name: Bump Version
+
+on:
+  push:
+    branches:
+      - "staging"
+  workflow_dispatch: {}
+
+jobs:
+  bump-version:
+    name: 'Bump Version on staging'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v2'
+        with:
+          ref: ${{ github.ref }}
+
+      - name: 'cat package.json'
+        run: cat ./package.json
