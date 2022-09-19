@@ -1,9 +1,10 @@
 name: Secondary Trigger
 
 on:
-  push:
-    branches:
-      - "staging"
+  workflow_run:
+      workflows: ["Bump Version"]
+      types:
+        - completed
   workflow_dispatch: {}
 
 jobs:
