@@ -2,7 +2,7 @@ name: Secondary Trigger
 
 on:
   workflow_run:
-      workflows: ["Bump Version"]
+      workflows: [Bump Version]
       types:
         - completed
   workflow_dispatch: {}
